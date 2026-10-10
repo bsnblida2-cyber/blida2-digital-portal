@@ -57,8 +57,10 @@ def space_entry(request, space):
         raise Http404
     if space != "international" and not request.user.is_authenticated:
         return redirect(f"{reverse('login')}?next={request.path}")
-    return render(request, "core/space.html", {
-        "space_name": SPACE_NAMES[space],
-        "space": space,
-        "is_international": space == "international",
-    })
+    if space == "international":
+        return render(request, "core/space.html", {
+            "space_name": SPACE_NAMES[space],
+            "space": space,
+            "is_international": True,
+        })
+    return redirect(f"{reverse('login')}?next={request.path}")
