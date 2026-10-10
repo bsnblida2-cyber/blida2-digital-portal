@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 490" role="img" aria-labelledby="title desc">
+<title id="title">شعار جامعة البليدة 2 لونيسي علي</title><desc id="desc">شعار دائري أخضر يتوسطه رمز الشمس والكتاب وجبل أحمر</desc>
+<defs><linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffd9a9"/><stop offset="1" stop-color="#ffb36d"/></linearGradient><path id="topArc" d="M 65,244 A 185,185 0 0,1 435,244"/><path id="bottomArc" d="M 55,263 A 195,195 0 0,0 445,263"/></defs>
+<circle cx="250" cy="245" r="240" fill="#9cbd58"/>
+<circle cx="250" cy="244" r="151" fill="url(#sun)" stroke="#234a31" stroke-width="3"/>
+<g stroke="#f18b2e" stroke-width="1.5"><path d="M250 93v37M202 108l20 31M170 138l28 26M145 170l26 14M298 108l-20 31M330 138l-28 26M355 170l-26 14"/></g>
+<path d="M140 202 250 136 360 202Z" fill="#c92327"/><path d="M181 187 221 161 252 187Z" fill="#fff"/>
+<path d="M35 203 C130 201 200 225 219 278 L281 278 C300 225 370 201 465 203" fill="none" stroke="#204c32" stroke-width="3"/>
+<path d="M35 214 C125 212 192 237 211 289 L289 289 C308 237 375 212 465 214" fill="none" stroke="#204c32" stroke-width="2.5"/>
+<path d="M35 225 C120 223 184 248 203 300 L297 300 C316 248 380 223 465 225" fill="none" stroke="#204c32" stroke-width="2.5"/>
+<path d="M35 236 C118 234 177 259 196 311 L304 311 C323 259 382 234 465 236" fill="none" stroke="#204c32" stroke-width="2.5"/>
+<circle cx="250" cy="229" r="14" fill="#d52d2f"/><circle cx="250" cy="347" r="19" fill="none" stroke="#204c32" stroke-width="3"/><circle cx="250" cy="347" r="13" fill="none" stroke="#204c32" stroke-width="2.5"/>
+<text font-family="serif" font-size="31" font-weight="bold" fill="#050a04"><textPath href="#topArc" startOffset="50%" text-anchor="middle">جامعة البليدة 2 لونيسي علي</textPath></text>
+<text font-family="serif" font-style="italic" font-size="29" fill="#050a04"><textPath href="#bottomArc" startOffset="50%" text-anchor="middle">Université Blida 2 Lounici Ali</textPath></text>
+</svg>
