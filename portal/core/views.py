@@ -24,3 +24,41 @@ def health(request): return JsonResponse({"status": "ok", "service": "blida2-por
 def robots(request):
     from django.conf import settings
     return HttpResponse(f"User-agent: *\nAllow: /\nSitemap: {settings.SITE_URL}/sitemap.xml\n", content_type="text/plain")
+
+from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.views import LoginView, LogoutView
+from django.shortcuts import redirect
+from django.urls import reverse
+from django.views.decorators.http import require_http_methods
+
+SPACE_NAMES = {
+    "student": "الطالب",
+    "teacher": "الأستاذ",
+    "researcher": "الباحث",
+    "staff": "الموظف",
+    "international": "الزائر الدولي",
+}
+
+def sign_up(request):
+    if request.user.is_authenticated:
+        return redirect("home")
+    form = UserCreationForm(request.POST or None)
+    if request.method == "POST" and form.is_valid():
+        user = form.save()
+        login(request, user)
+        return redirect(request.GET.get("next") or "home")
+    return render(request, "registration/signup.html", {"form": form})
+
+def space_entry(request, space):
+    if space not in SPACE_NAMES:
+        from django.http import Http404
+        raise Http404
+    if space != "international" and not request.user.is_authenticated:
+        return redirect(f"{reverse('login')}?next={request.path}")
+    return render(request, "core/space.html", {
+        "space_name": SPACE_NAMES[space],
+        "space": space,
+        "is_international": space == "international",
+    })
