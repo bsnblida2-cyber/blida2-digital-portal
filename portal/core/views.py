@@ -55,12 +55,22 @@ def space_entry(request, space):
     if space not in SPACE_NAMES:
         from django.http import Http404
         raise Http404
-    if space != "international" and not request.user.is_authenticated:
-        return redirect(f"{reverse('login')}?next={request.path}")
+
+    # International visitors can browse without an account.
     if space == "international":
         return render(request, "core/space.html", {
             "space_name": SPACE_NAMES[space],
             "space": space,
             "is_international": True,
         })
-    return redirect(f"{reverse('login')}?next={request.path}")
+
+    # Send protected spaces straight to this portal's login page.
+    # Preserve the intended destination so successful login returns here.
+    if not request.user.is_authenticated:
+        return redirect(f"{reverse('login')}?next={reverse('space_entry', kwargs={'space': space})}")
+
+    return render(request, "core/space.html", {
+        "space_name": SPACE_NAMES[space],
+        "space": space,
+        "is_international": False,
+    })
