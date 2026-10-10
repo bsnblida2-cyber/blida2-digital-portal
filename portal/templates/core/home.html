@@ -63,7 +63,7 @@ function applyLanguage(lang){
  document.querySelectorAll('.lang-choice').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===lang)));
  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
  const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
- nodes.forEach(n=>{if(!n.parentElement.closest('script,style')){const original=n.nodeValue.trim();if(dict[original])n.nodeValue=n.nodeValue.replace(original,dict[original]);}});
+ nodes.forEach(n=>{if(!n.parentElement.closest('script,style')){if(n.__blida2OriginalText===undefined)n.__blida2OriginalText=n.nodeValue;const original=n.__blida2OriginalText.trim();n.nodeValue=n.__blida2OriginalText.replace(original,dict[original]||original);}});
  const input=document.getElementById('searchInput');input.placeholder=lang==='ar'?'ابحث عن خدمة، كلية، أو معلومة...':lang==='fr'?'Rechercher un service, une faculté ou une information…':'Search for a service, faculty, or information...';
  document.title=lang==='ar'?'جامعة البليدة 2 لونيسي علي | البوابة الرقمية':lang==='fr'?'Université de Blida 2 | Portail numérique':'University of Blida 2 | Digital Portal';
  try{localStorage.setItem('blida2-language',lang)}catch(e){}
