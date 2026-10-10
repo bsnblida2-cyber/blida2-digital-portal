@@ -20,6 +20,40 @@ body.high-contrast{--paper:#fff;--ink:#001d22;--muted:#344f57;--line:#829b9b}bod
 @media(max-width:760px){.wrap{width:calc(100% - 22px)}.top{height:auto;min-height:68px}.top-inner{gap:9px;flex-wrap:wrap;padding:8px 0}.brand{min-width:0;flex:1}.seal{width:45px;height:45px}.brand strong{font-size:12px}.brand small{font-size:8px;letter-spacing:1px}.topnav{order:3;width:100%;overflow:auto;gap:20px;border-top:1px solid #edf2f0}.topnav a{padding:8px 0;font-size:11px}.topnav a:hover:after,.topnav a.current:after{bottom:3px}.tools{gap:5px}.tools .toolbtn:nth-child(2),.tools .toolbtn:nth-child(3){display:none}.toolbtn{width:31px;height:31px}.hero,.hero-grid{min-height:350px}.hero-grid{grid-template-columns:1fr;padding:27px 0 45px;gap:0}.hero-copy{order:1}.hero h1{font-size:27px}.hero p{font-size:12px}.hero-mark{display:none}.roles{margin-top:-26px}.section-title h2{font-size:20px}.role-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.role-card{min-height:280px;padding:12px 12px 14px;border-radius:17px}.role-art{height:75px}.art-cloud{width:108px;height:62px;font-size:43px}.role-card h3{font-size:16px}.role-links a{font-size:11px}.below{grid-template-columns:1fr;gap:10px}.library,.campus-card{min-height:165px}.footer-inner{flex-direction:column;align-items:flex-start}.footer-links{gap:12px}.social{align-self:flex-end}}
 @media(max-width:390px){.role-grid{grid-template-columns:1fr}.role-card{min-height:0}.role-links a{font-size:12px}.hero h1{font-size:24px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+
+/* Homepage refresh: broad photo hero and compact service tiles */
+.top{height:78px;background:rgba(255,255,255,.97);backdrop-filter:blur(12px)}
+.top-inner{gap:24px}
+.brand{min-width:250px}
+.topnav{gap:20px;font-size:13px}
+.hero{min-height:510px;background:linear-gradient(180deg,rgba(5,35,48,.06) 0%,rgba(5,35,48,.10) 42%,rgba(0,39,35,.48) 100%),url('https://univ-blida2.dz/wp-content/uploads/2022/11/IMG_20221117_162711-scaled.jpg') center 48%/cover no-repeat}
+.hero:before{display:none}
+.hero-grid{min-height:510px;display:flex;justify-content:center;align-items:flex-start;padding:86px 20px 120px}
+.hero-copy{width:min(850px,100%);max-width:850px;text-align:center;margin:0 auto}
+.eyebrow{display:none}
+.hero h1{font-size:clamp(32px,3.1vw,48px);line-height:1.45;margin:0 0 10px;color:#fff;text-shadow:0 3px 16px #001e1caa}
+.hero p{font-size:clamp(14px,1.2vw,18px);font-weight:600;color:#fff;margin:0 0 20px;text-shadow:0 2px 9px #001e1c}
+.search{max-width:700px;padding:7px 9px 7px 15px;box-shadow:0 12px 32px #001d1a44}
+.search input{font-size:14px;padding:10px 14px}
+.search button{width:48px;height:48px;font-size:22px}
+.hero-mark{display:none}
+.roles{margin-top:-74px;padding-bottom:26px}
+.section-title{display:none}
+.role-grid{gap:14px}
+.role-card{min-height:182px;padding:18px 14px 14px;border-radius:18px;box-shadow:0 12px 28px #0a3c3220;background:rgba(255,255,255,.97);border:1px solid #dce7f4}
+.role-card:before{display:none}
+.role-art{height:66px;margin:0 0 7px;transform:none}
+.art-cloud{width:60px;height:60px;border-radius:50%;font-size:28px;filter:none}
+.art-cloud:after{display:none}
+.role-card h3{font-size:16px;margin:0 0 5px;transform:none;color:#17465b}
+.role-links{display:none}
+.role-go{margin-top:5px;width:25px;height:25px;font-size:17px;background:#e7edf8;color:#244d68;box-shadow:none}
+.role-card:hover,.role-card:focus-within{transform:translateY(-5px);box-shadow:0 20px 34px #174e4628}
+.below{margin-top:8px}
+@media(max-width:1200px){.hero,.hero-grid{min-height:460px}.hero-grid{padding-top:70px}.roles{margin-top:-64px}.topnav{gap:12px}.role-card{min-height:170px}}
+@media(max-width:760px){.top{height:auto}.topnav{gap:18px}.hero,.hero-grid{min-height:400px}.hero-grid{padding:62px 0 90px}.hero h1{font-size:29px}.hero p{font-size:13px}.roles{margin-top:-55px}.role-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.role-card{min-height:155px;padding:14px 10px}.role-art{height:58px}.art-cloud{width:52px;height:52px;font-size:25px}.role-card h3{font-size:15px}.role-go{width:23px;height:23px}.role-card:last-child{grid-column:1/-1}.below{margin-top:14px}}
+@media(max-width:390px){.hero h1{font-size:25px}.hero-grid{padding-top:50px}.role-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.role-card:last-child{grid-column:1/-1}}
+
 </style>
 </head>
 <body>
