@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: blida2-digital-portal
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerContext: ./portal
+    dockerfilePath: ./portal/Dockerfile
+    healthCheckPath: /health/
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        sync: false
+      - key: DJANGO_DEBUG
+        value: "False"
+      - key: DJANGO_ALLOWED_HOSTS
+        value: blida2-digital-portal.onrender.com
+      - key: CSRF_TRUSTED_ORIGINS
+        value: https://blida2-digital-portal.onrender.com
+      - key: SITE_URL
+        value: https://blida2-digital-portal.onrender.com
+      - key: DATABASE_URL
+        sync: false
+      - key: SECURE_SSL_REDIRECT
+        value: "True"
+      - key: COOKIE_SECURE
+        value: "True"
+      - key: HSTS_SECONDS
+        value: "0"
