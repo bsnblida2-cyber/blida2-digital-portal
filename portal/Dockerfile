@@ -8,4 +8,4 @@ COPY . .
 RUN mkdir -p /app/media /app/staticfiles && chown -R app:app /app
 USER app
 EXPOSE 10000
-CMD ["sh", "-c", "python manage.py migrate --noinput && python manage.py collectstatic --noinput && gunicorn config.wsgi:application --bind 0.0.0.0:${PORT:-10000} --workers 2 --timeout 60"]
+CMD ["sh", "-c", "python manage.py makemigrations core --noinput && python manage.py migrate --noinput && python manage.py collectstatic --noinput && gunicorn config.wsgi:application --bind 0.0.0.0:${PORT:-10000} --workers 2 --timeout 60"]
