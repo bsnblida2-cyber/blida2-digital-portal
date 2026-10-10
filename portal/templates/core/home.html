@@ -133,10 +133,11 @@ function updateSearchStatus(lang){
  searchStatus.textContent=count?(lang==='ar'?'عدد النتائج المطابقة: ':lang==='fr'?'Résultats correspondants : ':'Matching results: ')+count:(lang==='ar'?'لم نعثر على نتائج مطابقة. جرّب كلمة أخرى أو راجع الموقع الرسمي.':lang==='fr'?'Aucun résultat correspondant. Essayez un autre terme ou consultez le site officiel.':'No matching results. Try another keyword or visit the official website.');
 }
 document.querySelectorAll('.lang-choice').forEach(b=>b.addEventListener('click',()=>applyLanguage(b.dataset.lang)));
-let savedLanguage='ar';try{savedLanguage=localStorage.getItem('blida2-language')||'ar'}catch(e){}if(savedLanguage!=='ar')applyLanguage(savedLanguage);
+let savedLanguage='ar';try{savedLanguage=localStorage.getItem('blida2-language')||'ar'}catch(e){}
 const searchInput=document.getElementById('searchInput');
 const searchStatus=document.getElementById('searchStatus');
 const searchable=[...document.querySelectorAll('.role-card'),...document.querySelectorAll('#news .list a'),...document.querySelectorAll('#news .box')];
+if(savedLanguage!=='ar')applyLanguage(savedLanguage);
 function filterPortal(){
  const q=(searchInput.value||'').trim().toLocaleLowerCase('ar');
  let shown=0;
