@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="البوابة الرقمية لجامعة البليدة 2 لونيسي علي — الخدمات الجامعية حسب نوع المستخدم">
-<meta name="theme-color" content="#00594b">
+<meta name="theme-color" content="#00594b">\n<link rel="manifest" href="/static/manifest.webmanifest">\n<link rel="icon" href="/static/images/pwa-icon.svg" type="image/svg+xml">\n<link rel="apple-touch-icon" href="/static/images/pwa-icon.svg">
 <title>جامعة البليدة 2 لونيسي علي | البوابة الرقمية</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
@@ -220,4 +220,4 @@ document.getElementById('focusSearch').addEventListener('click',()=>{document.ge
 document.getElementById('contrastToggle').addEventListener('click',()=>{document.body.classList.toggle('high-contrast');const on=document.body.classList.contains('high-contrast');document.getElementById('contrastToggle').setAttribute('aria-pressed',String(on));});
 document.querySelectorAll('.role-card').forEach(card=>{card.addEventListener('pointermove',e=>{if(e.pointerType==='touch'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform='perspective(850px) rotateY('+(-x*5)+'deg) rotateX('+(y*4)+'deg) translateY(-5px)';});card.addEventListener('pointerleave',()=>{card.style.transform='';});});
 </script>
-</body></html>
+<script>\nif ("serviceWorker" in navigator) { window.addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch((error) => console.warn("PWA service worker registration failed:", error))); }\n</script>\n</body></html>
