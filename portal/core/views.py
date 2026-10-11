@@ -74,3 +74,17 @@ def space_entry(request, space):
         "space": space,
         "is_international": False,
     })
+
+
+@require_GET
+def service_worker(request):
+    """Serve the PWA service worker from the origin root so it can control the portal."""
+    from django.contrib.staticfiles import finders
+    path = finders.find("sw.js")
+    if not path:
+        return HttpResponse("Service worker not found", status=404, content_type="text/plain")
+    with open(path, "r", encoding="utf-8") as worker_file:
+        response = HttpResponse(worker_file.read(), content_type="application/javascript; charset=utf-8")
+    response["Service-Worker-Allowed"] = "/"
+    response["Cache-Control"] = "no-cache"
+    return response
