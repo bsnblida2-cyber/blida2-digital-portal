@@ -13,6 +13,7 @@ urlpatterns = [
     path("accounts/signup/", views.sign_up, name="signup"),
     path("spaces/<slug:space>/", views.space_entry, name="space_entry"),
     path("health/", views.health, name="health"),
+    path("sw.js", views.service_worker, name="service_worker"),
     path("api/news/", views.news_api, name="news_api"),
     path("api/services/", views.services_api, name="services_api"),
     path("robots.txt", views.robots, name="robots"),
